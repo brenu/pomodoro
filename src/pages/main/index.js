@@ -6,6 +6,7 @@ export default function Main() {
   const [minutos, setMinutos] = useState(0);
   const [segundos, setSegundos] = useState(0);
   const [fase, setFase] = useState("trabalho");
+  const [isPaused, setIsPaused] = useState(true);
 
   useEffect(() => {
     let tempoPivot = tempo;
@@ -21,14 +22,17 @@ export default function Main() {
         tempoPivot = 0;
       }
     }
-
-    console.log(minutos, segundos);
   }, [tempo]);
 
   // Decreasing time continuously
   useEffect(() => {
+    var manageTempo;
     if (tempo > 0) {
-      setTimeout(() => setTempo(tempo - 1), 1000);
+      if (isPaused === false) {
+        setTimeout(() => {
+          setTempo(tempo - 1);
+        }, 1000);
+      }
     } else {
       function handlePhaseChange() {
         if (fase === "trabalho") {
@@ -42,7 +46,25 @@ export default function Main() {
 
       setTimeout(handlePhaseChange, 1000);
     }
-  }, [tempo]);
+  }, [tempo, isPaused]);
+
+  function handlePause() {
+    if (isPaused === true) {
+      setIsPaused(false);
+    } else {
+      setIsPaused(true);
+    }
+  }
+
+  function handleReset() {
+    if (fase === "trabalho") {
+      setTempo(1500);
+      setIsPaused(true);
+    } else {
+      setTempo(300);
+      setIsPaused(true);
+    }
+  }
 
   return (
     <div className="container">
@@ -51,6 +73,14 @@ export default function Main() {
         <p>
           {minutos}:{segundos > 9 ? segundos : "0" + segundos}
         </p>
+        <div className="buttons-container">
+          <button className="button" onClick={handlePause}>
+            {isPaused === false ? "Stop" : "Play"}
+          </button>
+          <button className="button" onClick={handleReset}>
+            Reset
+          </button>
+        </div>
       </div>
     </div>
   );
