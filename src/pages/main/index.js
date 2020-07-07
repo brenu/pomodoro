@@ -35,7 +35,7 @@ export default function Main() {
     <div className="container">
       <div className="timer-container">
         <p>
-          {minutos}:{segundos > 10 ? segundos : "0" + segundos}
+          {minutos}:{segundos > 9 ? segundos : "0" + segundos}
         </p>
       </div>
     </div>
