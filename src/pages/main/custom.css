@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap");
+
+body {
+  background: #f55;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-container {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+p {
+  font-size: 60pt;
+  font-weight: normal;
+  font-family: Rajdhani, Arial, Helvetica, sans-serif;
+  color: #f55;
+}
