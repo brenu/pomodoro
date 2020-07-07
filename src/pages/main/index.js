@@ -5,6 +5,7 @@ export default function Main() {
   const [tempo, setTempo] = useState(1500);
   const [minutos, setMinutos] = useState(0);
   const [segundos, setSegundos] = useState(0);
+  const [fase, setFase] = useState("trabalho");
 
   useEffect(() => {
     let tempoPivot = tempo;
@@ -28,12 +29,25 @@ export default function Main() {
   useEffect(() => {
     if (tempo > 0) {
       setTimeout(() => setTempo(tempo - 1), 1000);
+    } else {
+      function handlePhaseChange() {
+        if (fase === "trabalho") {
+          setFase("descanso");
+          setTempo(300);
+        } else {
+          setFase("trabalho");
+          setTempo(1500);
+        }
+      }
+
+      setTimeout(handlePhaseChange, 1000);
     }
   }, [tempo]);
 
   return (
     <div className="container">
       <div className="timer-container">
+        <h1 className="title">Hora do {fase}</h1>
         <p>
           {minutos}:{segundos > 9 ? segundos : "0" + segundos}
         </p>

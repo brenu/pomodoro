@@ -29,3 +29,11 @@ p {
   font-family: Rajdhani, Arial, Helvetica, sans-serif;
   color: #f55;
 }
+
+.title {
+  font-size: 10;
+  color: #f55;
+  font-weight: normal;
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
