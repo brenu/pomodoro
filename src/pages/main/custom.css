@@ -48,6 +48,7 @@ p {
 }
 
 .button {
+  display: flex;
   height: 44;
   background-color: #e44;
   text-align: center;

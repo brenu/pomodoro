@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaPlay, FaPause } from "react-icons/fa";
 import "./custom.css";
 
 export default function Main() {
@@ -76,7 +77,7 @@ export default function Main() {
         </p>
         <div className="buttons-container">
           <button className="button" onClick={handlePause}>
-            {isPaused === false ? "Stop" : "Play"}
+            {isPaused === false ? <FaPause /> : <FaPlay />}
           </button>
           <button className="button" onClick={handleReset}>
             Reset
