@@ -88,8 +88,8 @@ p {
 }
 
 .tomatoes-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
   width: 100%;
   max-width: 300px;
   justify-content: flex-start;
