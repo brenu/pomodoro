@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaPlay, FaPause } from "react-icons/fa";
+import { FaPlay, FaPause, FaUndoAlt } from "react-icons/fa";
 
 import "./custom.css";
 
@@ -102,7 +102,7 @@ export default function Main() {
               {isPaused === false ? <FaPause /> : <FaPlay />}
             </button>
             <button className="button" onClick={handleReset}>
-              Reset
+              <FaUndoAlt />
             </button>
           </div>
         </div>
