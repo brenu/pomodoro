@@ -6,7 +6,7 @@ import "./custom.css";
 import tomato from "../../assets/tomato.png";
 
 export default function Main() {
-  const [tempo, setTempo] = useState(3000);
+  const [tempo, setTempo] = useState(1500020);
   const [minutos, setMinutos] = useState(0);
   const [segundos, setSegundos] = useState(0);
   const [fase, setFase] = useState("trabalho");
@@ -70,10 +70,10 @@ export default function Main() {
       setSessions(sessions + 1);
       handleTomatoPush();
       setFase("descanso");
-      setTempo(3000);
+      setTempo(300000);
     } else {
       setFase("trabalho");
-      setTempo(3000);
+      setTempo(1500020);
     }
   }
 
