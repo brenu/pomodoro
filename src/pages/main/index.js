@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./custom.css";
 
 export default function Main() {
-  const [tempo, setTempo] = useState(1500);
+  const [tempo, setTempo] = useState(1500030);
   const [minutos, setMinutos] = useState(0);
   const [segundos, setSegundos] = useState(0);
   const [fase, setFase] = useState("trabalho");
@@ -14,11 +14,11 @@ export default function Main() {
     setSegundos(0);
 
     while (tempoPivot > 0) {
-      if (tempoPivot >= 60) {
+      if (tempoPivot >= 60000) {
         setMinutos((minutos) => minutos + 1);
-        tempoPivot = tempoPivot - 60;
+        tempoPivot = tempoPivot - 60000;
       } else {
-        setSegundos(tempoPivot);
+        setSegundos(Math.floor(tempoPivot / 1000));
         tempoPivot = 0;
       }
     }
@@ -26,25 +26,16 @@ export default function Main() {
 
   // Decreasing time continuously
   useEffect(() => {
-    var manageTempo;
     if (tempo > 0) {
-      if (isPaused === false) {
-        setTimeout(() => {
-          setTempo(tempo - 1);
-        }, 1000);
+      var timer = setTimeout(() => {
+        setTempo(tempo - 100);
+      }, 100);
+
+      if (isPaused === true) {
+        clearTimeout(timer);
       }
     } else {
-      function handlePhaseChange() {
-        if (fase === "trabalho") {
-          setFase("descanso");
-          setTempo(300);
-        } else {
-          setFase("trabalho");
-          setTempo(1500);
-        }
-      }
-
-      setTimeout(handlePhaseChange, 1000);
+      setTimeout(handlePhaseChange, 1);
     }
   }, [tempo, isPaused]);
 
@@ -56,13 +47,23 @@ export default function Main() {
     }
   }
 
-  function handleReset() {
+  async function handleReset() {
     if (fase === "trabalho") {
-      setTempo(1500);
       setIsPaused(true);
+      setTimeout(() => setTempo(1500020), 200);
     } else {
-      setTempo(300);
       setIsPaused(true);
+      setTimeout(() => setTempo(300000), 200);
+    }
+  }
+
+  function handlePhaseChange() {
+    if (fase === "trabalho") {
+      setFase("descanso");
+      setTempo(300000);
+    } else {
+      setFase("trabalho");
+      setTempo(1500020);
     }
   }
 
