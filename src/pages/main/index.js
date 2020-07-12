@@ -7,6 +7,8 @@ import "./custom.css";
 import tomato from "../../assets/tomato.png";
 import pop from "../../assets/pop.mp3";
 
+import BrowserNotification from "../../components/BrowserNotification";
+
 export default function Main() {
   const [tempo, setTempo] = useState(1500020);
   const [minutos, setMinutos] = useState(0);
@@ -17,6 +19,11 @@ export default function Main() {
   const [tomatoes, setTomatoes] = useState([]);
 
   const [play] = useSound(pop);
+  const Notifications = new BrowserNotification();
+
+  useEffect(() => {
+    Notification.requestPermission();
+  }, []);
 
   useEffect(() => {
     let tempoPivot = tempo;
@@ -71,6 +78,7 @@ export default function Main() {
 
   function handlePhaseChange() {
     if (fase === "trabalho") {
+      Notifications.showNotification("Pomodoro Timer");
       setSessions(sessions + 1);
       handleTomatoPush();
       play();
