@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaPlay, FaPause, FaUndoAlt } from "react-icons/fa";
+import useSound from "use-sound";
 
 import "./custom.css";
 
 import tomato from "../../assets/tomato.png";
+import pop from "../../assets/pop.mp3";
 
 export default function Main() {
   const [tempo, setTempo] = useState(1500020);
@@ -13,6 +15,8 @@ export default function Main() {
   const [isPaused, setIsPaused] = useState(true);
   const [sessions, setSessions] = useState(0);
   const [tomatoes, setTomatoes] = useState([]);
+
+  const [play] = useSound(pop);
 
   useEffect(() => {
     let tempoPivot = tempo;
@@ -69,6 +73,7 @@ export default function Main() {
     if (fase === "trabalho") {
       setSessions(sessions + 1);
       handleTomatoPush();
+      play();
       setFase("descanso");
       setTempo(300000);
     } else {
