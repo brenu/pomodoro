@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/pomodoro/static/css/main.b016c617.chunk.css",
-    "main.js": "/pomodoro/static/js/main.304740b2.chunk.js",
-    "main.js.map": "/pomodoro/static/js/main.304740b2.chunk.js.map",
-    "runtime-main.js": "/pomodoro/static/js/runtime-main.0c4c8ad0.js",
-    "runtime-main.js.map": "/pomodoro/static/js/runtime-main.0c4c8ad0.js.map",
-    "static/js/2.6f2f583a.chunk.js": "/pomodoro/static/js/2.6f2f583a.chunk.js",
-    "static/js/2.6f2f583a.chunk.js.map": "/pomodoro/static/js/2.6f2f583a.chunk.js.map",
-    "static/js/3.4c806c72.chunk.js": "/pomodoro/static/js/3.4c806c72.chunk.js",
-    "static/js/3.4c806c72.chunk.js.map": "/pomodoro/static/js/3.4c806c72.chunk.js.map",
+    "main.js": "/pomodoro/static/js/main.6df34d9e.chunk.js",
+    "main.js.map": "/pomodoro/static/js/main.6df34d9e.chunk.js.map",
+    "runtime-main.js": "/pomodoro/static/js/runtime-main.926e514b.js",
+    "runtime-main.js.map": "/pomodoro/static/js/runtime-main.926e514b.js.map",
+    "static/js/2.215ded48.chunk.js": "/pomodoro/static/js/2.215ded48.chunk.js",
+    "static/js/2.215ded48.chunk.js.map": "/pomodoro/static/js/2.215ded48.chunk.js.map",
+    "static/js/3.27f11864.chunk.js": "/pomodoro/static/js/3.27f11864.chunk.js",
+    "static/js/3.27f11864.chunk.js.map": "/pomodoro/static/js/3.27f11864.chunk.js.map",
     "index.html": "/pomodoro/index.html",
-    "precache-manifest.f3062e37705920295b35a954be2d7ad0.js": "/pomodoro/precache-manifest.f3062e37705920295b35a954be2d7ad0.js",
+    "precache-manifest.406812a44df884da3d7be0b24733fd7b.js": "/pomodoro/precache-manifest.406812a44df884da3d7be0b24733fd7b.js",
     "service-worker.js": "/pomodoro/service-worker.js",
     "static/css/main.b016c617.chunk.css.map": "/pomodoro/static/css/main.b016c617.chunk.css.map",
-    "static/js/2.6f2f583a.chunk.js.LICENSE.txt": "/pomodoro/static/js/2.6f2f583a.chunk.js.LICENSE.txt",
-    "static/js/3.4c806c72.chunk.js.LICENSE.txt": "/pomodoro/static/js/3.4c806c72.chunk.js.LICENSE.txt",
+    "static/js/2.215ded48.chunk.js.LICENSE.txt": "/pomodoro/static/js/2.215ded48.chunk.js.LICENSE.txt",
+    "static/js/3.27f11864.chunk.js.LICENSE.txt": "/pomodoro/static/js/3.27f11864.chunk.js.LICENSE.txt",
     "static/media/pop.mp3": "/pomodoro/static/media/pop.94ff391b.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.0c4c8ad0.js",
-    "static/js/2.6f2f583a.chunk.js",
+    "static/js/runtime-main.926e514b.js",
+    "static/js/2.215ded48.chunk.js",
     "static/css/main.b016c617.chunk.css",
-    "static/js/main.304740b2.chunk.js"
+    "static/js/main.6df34d9e.chunk.js"
   ]
 }
