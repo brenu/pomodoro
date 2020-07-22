@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaPlay, FaPause, FaUndoAlt } from "react-icons/fa";
 import useSound from "use-sound";
+import NoSleep from "nosleep.js";
 
 import "./custom.css";
 
@@ -17,6 +18,9 @@ export default function Main() {
   const [isPaused, setIsPaused] = useState(true);
   const [sessions, setSessions] = useState(0);
   const [tomatoes, setTomatoes] = useState([]);
+
+  // Método para não deixar o JS congelar
+  var noSleep = new NoSleep();
 
   const [play] = useSound(pop);
   const Notifications = new BrowserNotification();
@@ -61,8 +65,10 @@ export default function Main() {
   function handlePause() {
     if (isPaused === true) {
       setIsPaused(false);
+      noSleep.disable();
     } else {
       setIsPaused(true);
+      noSleep.enable();
     }
   }
 
