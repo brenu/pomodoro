@@ -31,6 +31,9 @@ p {
   font-weight: normal;
   font-family: Rajdhani, Arial, Helvetica, sans-serif;
   color: #e88;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 .title {
@@ -39,6 +42,9 @@ p {
   font-weight: normal;
   font-family: Ubuntu, Arial, Helvetica, sans-serif;
   text-align: center;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 .buttons-container {
