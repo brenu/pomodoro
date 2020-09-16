@@ -90,9 +90,13 @@ export default function Main() {
       play();
       setFase("descanso");
       setTempo(300000);
+      noSleep.disable();
+      noSleep.enable();
     } else {
       setFase("trabalho");
       setTempo(1500020);
+      noSleep.disable();
+      noSleep.enable();
     }
   }
 
