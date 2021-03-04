@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaPlay, FaPause, FaUndoAlt } from "react-icons/fa";
 import useSound from "use-sound";
-import NoSleep from "nosleep.js";
 
 import "./custom.css";
 
@@ -18,9 +17,7 @@ export default function Main() {
   const [isPaused, setIsPaused] = useState(true);
   const [sessions, setSessions] = useState(0);
   const [tomatoes, setTomatoes] = useState([]);
-
-  // Método para não deixar o JS congelar
-  var noSleep = new NoSleep();
+  const [startedAt, setStartedAt] = useState(Date.now());
 
   const [play] = useSound(pop);
   const Notifications = new BrowserNotification();
@@ -49,7 +46,9 @@ export default function Main() {
   useEffect(() => {
     if (tempo > 0) {
       var timer = setTimeout(() => {
-        setTempo(tempo - 100);
+        const elapsedTime = Date.now() - startedAt;
+        setStartedAt(Date.now());
+        setTempo((tempo) => tempo - elapsedTime);
       }, 100);
 
       if (isPaused === true) {
@@ -60,25 +59,28 @@ export default function Main() {
     }
   }, [tempo, isPaused]);
 
-  useEffect(() => console.log(tomatoes), [tomatoes]);
-
   function handlePause() {
     if (isPaused === true) {
+      setStartedAt(Date.now());
       setIsPaused(false);
-      noSleep.disable();
     } else {
       setIsPaused(true);
-      noSleep.enable();
     }
   }
 
   async function handleReset() {
     if (fase === "trabalho") {
       setIsPaused(true);
-      setTimeout(() => setTempo(1500020), 200);
+      setTimeout(() => {
+        setTempo(1500020);
+        setStartedAt(Date.now());
+      }, 200);
     } else {
       setIsPaused(true);
-      setTimeout(() => setTempo(300000), 200);
+      setTimeout(() => {
+        setTempo(300000);
+        setStartedAt(Date.now());
+      }, 200);
     }
   }
 
@@ -90,13 +92,9 @@ export default function Main() {
       play();
       setFase("descanso");
       setTempo(300000);
-      noSleep.disable();
-      noSleep.enable();
     } else {
       setFase("trabalho");
       setTempo(1500020);
-      noSleep.disable();
-      noSleep.enable();
     }
   }
 
